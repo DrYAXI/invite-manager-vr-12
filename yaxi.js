@@ -22,14 +22,14 @@ const fs = require("fs");
 const Discord = require ("discord.js")
 const moment = require ("moment")
 const yaxi = new Discord.Client();
-const prefix = "j!";
+const prefix = "Y!";
 
 
 yaxi.login("ODUwNDUwMTg0OTYxMzkyNjUy.YLp5dA.6JqTnpK81y6v7NNQiL3XGeqT0Bg");
 yaxi.on("ready", async () => {
   console.log(`Logged in as ${yaxi.user.username}!`);
   yaxi.user.setStatus("ONLINE");
-  yaxi.user.setActivity(`j!help`, { type: "WATCHING" });
+  yaxi.user.setActivity(`Y!help`, { type: "WATCHING" });
   yaxi.guilds.cache.forEach(g => {
     if (g.member(yaxi.user).hasPermission("ADMINISTRATOR")) {
       g.fetchInvites().then(guildInvites => {});
