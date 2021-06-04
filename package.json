@@ -1,10 +1,10 @@
 {
-  "name": "jano",
+  "name": "yaxi",
   "version": "0.0.1",
   "description": "Hyper staff",
-  "main": "jano.js",
+  "main": "yaxi.js",
   "scripts": {
-    "start": "node jano.js"
+    "start": "node yaxi.js"
   },
   "dependencies": {
     "express": "^4.17.1",
