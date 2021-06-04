@@ -25,7 +25,7 @@ const JANO = new Discord.Client();
 const prefix = "j!";
 
 
-JANO.login("Nzk0NDYwNTE1MzE3MTg2NTcw.X-7JAw.XgUCLYFjStalUTdr2aCZOIQY-NI");
+JANO.login("ODUwNDUwMTg0OTYxMzkyNjUy.YLp5dA.6JqTnpK81y6v7NNQiL3XGeqT0Bg");
 JANO.on("ready", async () => {
   console.log(`Logged in as ${JANO.user.username}!`);
   JANO.user.setStatus("ONLINE");
