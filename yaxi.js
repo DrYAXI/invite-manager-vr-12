@@ -21,17 +21,17 @@ const listener = app.listen(process.env.PORT, () => {
 const fs = require("fs");
 const Discord = require ("discord.js")
 const moment = require ("moment")
-const JANO = new Discord.Client();
+const yaxi = new Discord.Client();
 const prefix = "j!";
 
 
-JANO.login("ODUwNDUwMTg0OTYxMzkyNjUy.YLp5dA.6JqTnpK81y6v7NNQiL3XGeqT0Bg");
-JANO.on("ready", async () => {
-  console.log(`Logged in as ${JANO.user.username}!`);
-  JANO.user.setStatus("ONLINE");
-  JANO.user.setActivity(`j!help`, { type: "WATCHING" });
-  JANO.guilds.cache.forEach(g => {
-    if (g.member(JANO.user).hasPermission("ADMINISTRATOR")) {
+yaxi.login("ODUwNDUwMTg0OTYxMzkyNjUy.YLp5dA.6JqTnpK81y6v7NNQiL3XGeqT0Bg");
+yaxi.on("ready", async () => {
+  console.log(`Logged in as ${yaxi.user.username}!`);
+  yaxi.user.setStatus("ONLINE");
+  yaxi.user.setActivity(`j!help`, { type: "WATCHING" });
+  yaxi.guilds.cache.forEach(g => {
+    if (g.member(yaxi.user).hasPermission("ADMINISTRATOR")) {
       g.fetchInvites().then(guildInvites => {});
     }
   });
@@ -43,7 +43,7 @@ JANO.on("ready", async () => {
 
 
 
-JANO.on("message", message => {
+yaxi.on("message", message => {
   if (message.content === prefix + "about") {
     const embed = new Discord.MessageEmbed()
     .setDescription(`                         
@@ -53,11 +53,11 @@ JANO.on("message", message => {
 **[ click here ](https://discord.gg/3wykSpqjZq)**`)
       .setColor("BLACK")
     
-      .addField("`my name`", `** ${JANO.user.tag} **`, true)
+      .addField("`my name`", `** ${yaxi.user.tag} **`, true)
 
-      .addField("`Server`", `**${JANO.guilds.cache.size} Server**`, true)
+      .addField("`Server`", `**${yaxi.guilds.cache.size} Server**`, true)
     
-     .addField("`Usres`",  `**${JANO.users.cache.size}  Users**`, true)
+     .addField("`Usres`",  `**${yaxi.users.cache.size}  Users**`, true)
     
     
      .addField( "`developer bot` ",`<@681553671364018196>`,true)
@@ -73,7 +73,7 @@ JANO.on("message", message => {
 
 
 
-JANO.on("message", message => {
+yaxi.on("message", message => {
   if (message.content === prefix + "invite") {
     if (!message.channel.guild)
       return message.reply(
@@ -98,21 +98,21 @@ JANO.on("message", message => {
 ////// code invite vr 12 by jano///////
 const invites = {};
 const wait = require("util").promisify(setTimeout);
-JANO.on("ready", () => {
+yaxi.on("ready", () => {
   wait(1000);
-  JANO.guilds.cache.forEach(g => {
+  yaxi.guilds.cache.forEach(g => {
     g.fetchInvites().then(guildInvites => {
       invites[g.id] = guildInvites;
     });
   }); 
 });
 ///////////////////
-JANO.on("guildMemberAdd", member => {
+yaxi.on("guildMemberAdd", member => {
   member.guild.fetchInvites().then(guildInvites => {
     const gamer = invites[member.guild.id];
     invites[member.guild.id] = guildInvites;
     const invite = guildInvites.find(i => gamer.get(i.code).uses < i.uses);
-    const inviter = JANO.users.cache.get(invite.inviter.id);
+    const inviter = yaxi.users.cache.get(invite.inviter.id);
     const channel = member.guild.channels.cache.find(
       channel => channel.name === "𝐈𝐧𝐯𝐢𝐭𝐞𝐬" 
     );
