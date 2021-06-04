@@ -67,7 +67,7 @@ yaxi.on("message", message => {
       );
     
     message.channel.send(embed);
-    message.react("<a:jano_27:799630916820795422>");
+    message.react("");
   }
 });
 
@@ -81,12 +81,12 @@ yaxi.on("message", message => {
       );
     let embed = new Discord.MessageEmbed()
       .setColor("GREEN")
-      .setTitle("=--><a:jano_10:799629559217389608> <a:jano_24:799630717507862558> click touch for link bot <a:jano_24:799630717507862558> <a:jano_10:799629559217389608><--=")
+      .setTitle(" click touch for link bot ")
       .setURL(
         "https://discord.com/api/oauth2/authorize?client_id=799228179784794183&permissions=8&scope=bot"
       );
     message.channel.send(embed);
-     message.react("<a:jano_27:799630916820795422>");
+     message.react("");
   }
 });
 
@@ -95,7 +95,7 @@ yaxi.on("message", message => {
 
 
 
-////// code invite vr 12 by jano///////
+////// code invite vr 12 by yaxi///////
 const invites = {};
 const wait = require("util").promisify(setTimeout);
 yaxi.on("ready", () => {
